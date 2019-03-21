@@ -27,6 +27,20 @@ class Pinjam_barang extends CI_Controller
 		$this->load->view('footer');
 	}
 
+	public function by_user()
+	{
+		$uname = $this->session->userdata('username');
+		$data['level'] = $this->login_model->getLevel($uname);
+
+		$data['pinjam_barang'] = $this->pinjam_barang_model->getDataByUser($uname);
+		$this->load->view('head');
+		$this->load->view('header');
+		$this->load->view('navigasi', $data);
+		$this->load->view('pinjam_barang/pinjam_barangList', $data);
+		$this->load->view('footer');
+	}
+
+
 	public function tambahPinjam_barang()
 	{
 		$uname = $this->session->userdata('username');

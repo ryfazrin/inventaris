@@ -20,6 +20,17 @@
 			return $query->result();
 		}
 
+		function getDataByUser($uname)
+		{
+			$this->db->select('*');
+			$this->db->from('pinjam_barang');
+			$this->db->join('barang', 'pinjam_barang.id_barang = barang.id_barang');
+			$this->db->where('peminjam', $uname);
+			$this->db->order_by('id_pinjam', 'DESC');
+			$query = $this->db->get();
+			return $query->result();
+		}
+
 		function getPeminjam()
 		{
 			$this->db->where('level', 'peminjam');

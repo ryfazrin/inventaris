@@ -33,6 +33,10 @@
                        ?>
                       </div>
                     <div class="col-lg-6">
+                      
+                    <?php if ($level->level == 'peminjam'): ?>
+                      <input name="peminjam" type="hidden" class="form-control" value="<?= $level->username ?>">
+                    <?php else: ?>
                       <div class="form-group">
                         <label>Nama Peminjam</label>
                         <select class="form-control select2 text-capitalize" name="peminjam">
@@ -41,12 +45,14 @@
                             <option value="<?= $pinjam_barangId->peminjam; ?>"><?= $pinjam_barangId->peminjam; ?></option>
                             <option disabled>-</option>
                           <?php endif ?>
-                          
+
                           <?php foreach ($peminjam_user as $data): ?>
                             <option value="<?= isset($data->username)?$data->username:''; ?>"><?= isset($data->username)?$data->username:''; ?></option>
-                          <?php endforeach ?>
+                          <?php endforeach; ?>
                         </select>
                       </div>
+                    <?php endif; ?>
+
                       <div class="form-group">
                         <label>Nama Barang</label>
                         <select class="form-control select2 text-capitalize" name="id_barang">
@@ -70,7 +76,6 @@
                       <div class="form-group">
                         <label>Tanggal Kembali</label>
                       <input name="tgl_kembali" type="text" class="form-control datepicker"  value="<?= isset($pinjam_barangId->tgl_kembali)?$pinjam_barangId->tgl_kembali:''; ?>">
-                        <!-- <input name="tgl_kembali" type="date" class="form-control" value="<?= isset($pinjam_barangId->tgl_kembali)?$pinjam_barangId->tgl_kembali:''; ?>"> -->
                       </div>
                       <div class="form-group">
                         <label>Kondisi</label>
@@ -78,7 +83,13 @@
                       </div>
                     <div class="form-group text-right">
                       <button class="btn btn-info mr-1" type="submit">Simpan</button>
-                      <a href="<?php echo site_url('pinjam_barang'); ?>"> <button type="button" class="btn btn-danger" name="batal">Kembali</button></a>
+
+                      <?php if ($level->level == 'peminjam'): ?>
+                        <a href="<?php echo site_url('pinjam_barang/by_user/'.$level->username); ?>"> <button type="button" class="btn btn-danger" name="batal">Kembali</button></a>
+                      <?php else: ?>
+                        <a href="<?php echo site_url('pinjam_barang'); ?>"> <button type="button" class="btn btn-danger" name="batal">Kembali</button></a>
+                      <?php endif; ?>
+
                     </div>
                   </div>
                 </div>

@@ -30,23 +30,6 @@
     </div>
   <!-- General JS Scripts -->
   <script src="<?php echo base_url('assets/modules/jquery.min.js')?>"></script>
-    <script type="text/javascript">
-      $(document).ready(function(){
- 
-      $('#modal-konfirmasi').on('show.bs.modal', function (event) {
-      var div = $(event.relatedTarget) // Tombol dimana modal di tampilkan
-       
-      // Untuk mengambil nilai dari data-id="" yang telah kita tempatkan pada link hapus
-      var id = div.data('id')
-       
-      var modal = $(this)
-       
-      // Mengisi atribut href pada tombol ya yang kita berikan id hapus-true pada modal .
-      modal.find('#hapus-true-data').attr("href","<?php echo site_url('user/hapus/'); ?>"+id);
-      })
-       
-      });
-    </script>
   <script src="<?php echo base_url('assets/modules/popper.js')?>"></script>
   <script src="<?php echo base_url('assets/modules/tooltip.js')?>"></script>
   <script src="<?php echo base_url('assets/modules/bootstrap/js/bootstrap.min.js')?>"></script>

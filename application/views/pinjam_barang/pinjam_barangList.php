@@ -25,7 +25,9 @@
                             <th>Jumlah</th>
                             <th>Kondisi</th>
                             <th>Tanggal Kembali</th>
-                            <th>action</th>
+                            <?php if ($level->level != 'peminjam'): ?>
+                              <th>action</th>
+                            <?php endif ?>
                           </tr>
                         </thead>
                         <tbody>
@@ -38,19 +40,23 @@
                             <td class="text-center"><?= $no++; ?></td>
                             <td>
                                 <span class="text-capitalize"><?= $data->peminjam; ?></span>
+                                <?php if ($level->level != 'peminjam'): ?>
                                  <div class="table-links">
-                                  <a href="<?php echo site_url('barang_masuk/ubah/'.$data->id_pinjam);?>"><span class="badge badge-primary">Edit <i class="fas fa-pencil-alt"></i></span></a>
+                                  <a href="<?php echo site_url('pinjam_barang/ubah/'.$data->id_pinjam);?>"><span class="badge badge-primary">Edit <i class="fas fa-pencil-alt"></i></span></a>
                                 </div>
+                                <?php endif; ?>
                             </td>
                             <td><?= nice_date($data->tgl_pinjam, 'd-m-Y'); ?></td>
                             <td><?= $data->nama_barang; ?></td>
                             <td><?= $data->jml_barang; ?></td>
                             <td><?= $data->kondisi; ?></td>
                             <td class="text-danger"><?= nice_date($data->tgl_kembali, 'd-m-Y'); ?></td>
+                            <?php if ($level->level != 'peminjam'): ?>
                             <td>
                                <a href="<?php echo site_url('pinjam_barang/ubah/'.$data->id_pinjam);?>" class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt"></i></a>
                                <a href="<?= site_url('pinjam_barang/hapus/'.$data->id_pinjam); ?>" class="btn btn-danger btn-action" onclick="return confirm('Yakin Hapus data peminjaman?')" data-toggle="tooltip" title="Delete"><i class="fas fa-trash"></i></a>
                             </td>
+                            <?php endif; ?>
                           </tr>
                         <?php
                             }

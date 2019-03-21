@@ -41,7 +41,7 @@
                             <option disabled>-</option>
                           <?php endif ?>
 
-                          <?php foreach ($barang as $data): ?>
+                          <?php foreach ($nama_barang as $data): ?>
                             <option value="<?= isset($data->id_barang)?$data->id_barang:''; ?>"><?= isset($data->nama_barang)?$data->nama_barang:''; ?></option>
                           <?php endforeach ?>
 	                      </select>
@@ -64,7 +64,7 @@
                             <option disabled>-</option>
                           <?php endif ?>
 
-                          <?php foreach ($suplier as $data): ?>
+                          <?php foreach ($nama_suplier as $data): ?>
                             <option value="<?= isset($data->id_suplier)?$data->id_suplier:''; ?>"><?= isset($data->nama_suplier)?$data->nama_suplier:''; ?></option>
                           <?php endforeach ?>
                         </select>
