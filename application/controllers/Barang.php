@@ -85,6 +85,19 @@ class Barang extends CI_Controller {
 		$this->load->view('footer');
 	}
 
+	public function konfirmasi_hapus($id)
+	{
+		$data['id'] = $id;
+
+		$uname = $this->session->userdata('username');
+		$data['level'] = $this->login_model->getLevel($uname);
+		$this->load->view('head');
+		$this->load->view('header');
+		$this->load->view('navigasi', $data);
+		$this->load->view('barang/konfirmasi_hapus', $data);
+		$this->load->view('footer');
+	}
+
 	public function hapus($id)
 	{
 		$this->barang_model->delete($id);

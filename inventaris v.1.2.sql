@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 15, 2019 at 04:31 PM
+-- Generation Time: Mar 23, 2019 at 02:23 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -36,7 +36,6 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`id_barang`, `nama_barang`) VALUES
-(1, 'mouse'),
 (2, 'laptop'),
 (3, 'kipas'),
 (7, 'printer'),
@@ -67,9 +66,7 @@ CREATE TABLE `barang_keluar` (
 
 INSERT INTO `barang_keluar` (`id_keluar`, `id_barang`, `tgl_keluar`, `jml_keluar`, `lokasi`, `penerima`) VALUES
 (1, 2, '2019-03-02', 2, 'mini market smart', 'cahyono yudi'),
-(2, 1, '2019-03-01', 3, 'gebe mart', 'kasir gebe mart'),
 (4, 3, '2019-03-02', 2, 'gebe mart', 'kasir gebe mart'),
-(5, 1, '2019-03-06', 5, 'sini', 'ryan'),
 (6, 2, '2019-03-06', 3, 'ini', 'ryan'),
 (7, 3, '2019-03-06', 7, 'yang ini aja', 'ryan saja');
 
@@ -96,18 +93,15 @@ CREATE TABLE `barang_masuk` (
 --
 
 INSERT INTO `barang_masuk` (`id_masuk`, `id_barang`, `id_suplier`, `tgl_masuk`, `spesifikasi`, `lokasi`, `kondisi`, `sumber_dana`, `jml_masuk`) VALUES
-(1, 1, 1, '2019-02-01', 'mouse gaming hpi 100', 'lap rpl', 'baru', 'dana bos', 10),
 (3, 2, 1, '2019-02-28', 'asus i5', 'lab ak', 'bekas', 'dana sumbangan', 5),
 (14, 7, 1, '2019-03-01', 'printer epson 220', 'lab rpl', 'baru', 'dana sumbangan', 1),
 (15, 3, 2, '2019-03-01', 'kipas angin vika', 'lab akuntansi', 'bekas', 'dana bos', 2),
-(16, 1, 2, '2019-03-01', 'mouse biasa', 'lab mm', 'baru', 'dana bos', 20),
-(17, 1, 2, '2019-03-01', 'mouse dpi 20', 'lab mm', 'baru', 'dana bos', 10),
 (18, 8, 2, '2019-03-01', 'komputer asus ram 4gb i5', 'lab mm', 'baru', 'dana sponsor', 20),
 (19, 3, 2, '2019-03-03', 'kipas isekai 3000', 'lab bdp', 'baru', 'dana sponsor sinar terang', 2),
 (21, 10, 1, '2019-03-03', 'buku sejarah kelas 12', 'perpustakaan', 'baru', 'dana bos', 100),
 (22, 11, 2, '2019-03-03', 'matematika kelas 12', 'perpustakaan', 'baru', 'dana bos', 100),
-(23, 1, 2, '2019-03-14', 'mas', 'lab rpil', 'kurang baik', 'dana bis', 6),
-(24, 12, 1, '2019-03-07', 'ram i7', 'lab rpl', 'baru', 'dana bos', 10);
+(24, 12, 1, '2019-03-07', 'ram i7', 'lab rpl', 'baru', 'dana bos', 10),
+(25, 7, 1, '2019-03-21', 'printer 3pson L220', 'lab rpl', 'baik', 'dana bos', 2);
 
 -- --------------------------------------------------------
 
@@ -169,7 +163,10 @@ INSERT INTO `pinjam_barang` (`id_pinjam`, `peminjam`, `tgl_pinjam`, `id_barang`,
 (1, 'bagus', '2019-03-02', 8, 5, '2019-03-01', 'bekas'),
 (2, 'bagus', '2019-03-01', 2, 5, '2019-03-03', 'baru'),
 (3, 'ihfa', '2019-03-03', 9, 1, '2019-03-05', 'baru'),
-(4, 'ihfa', '2019-03-03', 7, 1, '2019-03-09', 'lama');
+(4, 'ihfa', '2019-03-03', 7, 1, '2019-03-09', 'lama'),
+(5, 'peminjam1', '2019-03-21', 2, 1, '2019-03-21', 'baik'),
+(7, 'peminjam1', '2019-03-21', 7, 1, '2019-03-21', 'baik'),
+(9, 'peminjam1', '2019-03-21', 9, 1, '2019-03-31', 'Baik');
 
 -- --------------------------------------------------------
 
@@ -255,7 +252,6 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `nama`, `username`, `password`, `level`) VALUES
 (2, 'bagus', 'bagus', '17b38fc02fd7e92f3edeb6318e3066d8', 'peminjam'),
-(3, 'ihfa lazuardi', 'ihfa', '6fc411b64d88029d0bec83f3a64677d9', 'peminjam'),
 (4, 'ryan adm0n', 'ryfazrin', '5fd8406bd1dbf647eb2cfd8021208b92', 'admin'),
 (5, 'Peminjam 1', 'peminjam1', 'd192e8083fb41156babcab75c345cccf', 'peminjam'),
 (6, 'peminjam 2', 'peminjam2', '53c00c96141e24cfff921a36ce962dd6', 'peminjam'),
@@ -378,12 +374,12 @@ ALTER TABLE `barang_keluar`
 -- AUTO_INCREMENT for table `barang_masuk`
 --
 ALTER TABLE `barang_masuk`
-  MODIFY `id_masuk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_masuk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 --
 -- AUTO_INCREMENT for table `pinjam_barang`
 --
 ALTER TABLE `pinjam_barang`
-  MODIFY `id_pinjam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_pinjam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `suplier`
 --
@@ -402,20 +398,20 @@ ALTER TABLE `user`
 -- Constraints for table `barang_keluar`
 --
 ALTER TABLE `barang_keluar`
-  ADD CONSTRAINT `barang_keluar_ibfk_1` FOREIGN KEY (`id_barang`) REFERENCES `barang` (`id_barang`);
+  ADD CONSTRAINT `barang_keluar_ibfk_1` FOREIGN KEY (`id_barang`) REFERENCES `barang` (`id_barang`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `barang_masuk`
 --
 ALTER TABLE `barang_masuk`
-  ADD CONSTRAINT `barang_masuk_ibfk_1` FOREIGN KEY (`id_barang`) REFERENCES `barang` (`id_barang`),
-  ADD CONSTRAINT `barang_masuk_ibfk_2` FOREIGN KEY (`id_suplier`) REFERENCES `suplier` (`id_suplier`);
+  ADD CONSTRAINT `barang_masuk_ibfk_3` FOREIGN KEY (`id_barang`) REFERENCES `barang` (`id_barang`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `barang_masuk_ibfk_4` FOREIGN KEY (`id_suplier`) REFERENCES `suplier` (`id_suplier`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `pinjam_barang`
 --
 ALTER TABLE `pinjam_barang`
-  ADD CONSTRAINT `pinjam_barang_ibfk_1` FOREIGN KEY (`id_barang`) REFERENCES `barang` (`id_barang`);
+  ADD CONSTRAINT `pinjam_barang_ibfk_1` FOREIGN KEY (`id_barang`) REFERENCES `barang` (`id_barang`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
