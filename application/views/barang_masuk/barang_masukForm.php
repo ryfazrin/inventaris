@@ -16,7 +16,7 @@
                       echo '<h4>Edit barang masuk</h4>';
                     }else{
                       // tambah barang
-                      echo form_open('barang_masuk/simpanbarang_masuk');   
+                      echo form_open('barang_masuk/simpanbarang_masuk');
                       echo '<h4>Tambah Barang masuk</h4>';
                     }
                  ?>
@@ -24,7 +24,7 @@
                   <div class="card-body">
                     <div class="row">
                       <div class="col-lg-12">
-                      <?php 
+                      <?php
                         if (@$sukses) {
                           echo $sukses;
                         }elseif (@$error) {
@@ -36,7 +36,11 @@
                       <div class="form-group">
                         <label>Nama Barang</label>
                         <select class="form-control select2 text-capitalize" name="id_barang">
-                          <?php if (isset($barang_masukId->nama_barang)): ?>
+                          <?php if (isset($barangId->nama_barang)): ?>
+                            <option value="<?= $barangId->id_barang; ?>"><?= $barangId->nama_barang; ?></option>
+                            <option disabled>-</option>
+                          <?php endif ?>
+                          <?php if (isset($barang_masukId->id_barang)): ?>
                             <option value="<?= $barang_masukId->id_barang; ?>"><?= $barang_masukId->nama_barang; ?></option>
                             <option disabled>-</option>
                           <?php endif ?>
@@ -87,13 +91,13 @@
                     </div>
                     </div>
                 </div>
-                  </div>  
+                  </div>
           </div>
                 </form>
         </div>
 
               </div>
-            </div>          
+            </div>
           </div>
         </section>
       </div>

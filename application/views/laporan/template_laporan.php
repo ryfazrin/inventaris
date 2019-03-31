@@ -42,7 +42,7 @@
               <!-- content -->
               <?php
               if (isset($barang)) {
-                $this->load->view('laporan/laporan_barang'); 
+                $this->load->view('laporan/laporan_barang');
               } else if (isset($suplier)) {
                 $this->load->view('laporan/laporan_suplier');
               } else if (isset($barang_masuk)) {
@@ -54,7 +54,7 @@
               } else {
                 echo "<div class='alert alert-danger text-center'><strong>data tidak ditemukan</strong></div>";
               }
-              
+
               ?>
               <!-- end content -->
             <div class="mt-5 text-muted text-right">
@@ -82,7 +82,7 @@
 
   <!-- Page Specific JS File -->
   <script src="<?php echo base_url('assets/js/page/modules-datatables.js')?>"></script>
-  
+
   <!-- Template JS File -->
   <script src="<?php echo base_url('assets/js/scripts.js')?>"></script>
   <script src="<?php echo base_url('assets/js/custom.js')?>"></script>

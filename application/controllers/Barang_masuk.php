@@ -89,8 +89,8 @@ class Barang_masuk extends CI_Controller
 
 		$uname = $this->session->userdata('username');
 		$data['level'] = $this->login_model->getLevel($uname);
-		$data['barang'] = $this->barang_model->getData();
-		$data['suplier'] = $this->suplier_model->getData();
+		$data['nama_barang'] = $this->barang_model->getData();
+		$data['nama_suplier'] = $this->suplier_model->getData();
 		$this->load->view('head');
 		$this->load->view('header');
 		$this->load->view('navigasi', $data);

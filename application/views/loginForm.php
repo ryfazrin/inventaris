@@ -35,7 +35,7 @@
         <div class="row">
           <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
             <div class="login-brand"><img src="<?php echo site_url('assets/img/logo.png'); ?>" style="width: 50px;"> Inventaris</div>
-            <?php 
+            <?php
               if (@$keluar) {
                 echo $keluar;
               }
@@ -89,6 +89,33 @@
               Copyright &copy; Design By <a href="https://stisla.com/">Stisla</a> 2018
             </div>
           </div>
+
+          <div class="col-lg-3">
+            <h2>Login</h2>
+            <ul>
+              <li>
+                <b>Level: admin</b> <br>
+                Username: admin<br>
+                Pass: admin<br>
+              </li>
+              <li>
+                <b>Level: manajemen</b> <br>
+                Username: manajemen<br>
+                Pass: manajemen<br>
+              </li>
+              <li>
+                <b>Level: peminjam</b> <br>
+                Username: peminjam1<br>
+                Pass: peminjam1<br>
+              </li>
+              <li>
+                <b>Level: peminjam</b> <br>
+                Username: peminjam2<br>
+                Pass: peminjam2<br>
+              </li>
+            </ul>
+          </div>
+
         </div>
       </div>
     </section>
@@ -107,7 +134,7 @@
 
   <!-- Page Specific JS File -->
   <script src="<?php echo base_url('assets/js/page/modules-datatables.js')?>"></script>
-  
+
   <!-- Template JS File -->
   <script src="<?php echo base_url('assets/js/scripts.js')?>"></script>
   <script src="<?php echo base_url('assets/js/custom.js')?>"></script>

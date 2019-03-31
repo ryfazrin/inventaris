@@ -3,8 +3,6 @@
                 <!-- table laporan -->
                   <div class="card-header">
                     <h1 class="text-center">Laporan data Barang</h1>
-                    <h1>// belum selesai</h1>
-                    <h1>// isi didalam->nama barang, jumlah masuk, jumlah keluar, stok</h1>
                     <!-- <div class="section-title mt-0">Light</div> -->
                   </div>
                   <div class="card-body">
@@ -15,17 +13,21 @@
                           <th scope="col">Nama Barang</th>
                           <th scope="col">Jumlah Masuk</th>
                           <th scope="col">Jumlah Keluar</th>
-                          <th scope="col">stok</th>
+                          <th scope="col">Jumlah Dipinjam</th>
+                          <th scope="col">Sisa Stok</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <?php 
+                        <?php
                          $no = 1;
                          foreach ($barang as $data): ?>
                           <tr>
                             <td scope="row"><?= $no++; ?></td>
                             <td class="text-uppercase"><?= $data->nama_barang; ?></td>
-                            <td><?= $data->total; ?></td>
+                            <td><?= $data->jml_masuk; ?></td>
+                            <td><?= $data->jml_keluar; ?></td>
+                            <td><?= $data->jml_pinjam; ?></td>
+                            <td><?= $data->sisa_stok; ?></td>
                           </tr>
                         <?php endforeach ?>
                       </tbody>

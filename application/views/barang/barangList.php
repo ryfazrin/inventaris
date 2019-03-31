@@ -4,19 +4,19 @@
           <div class="section-header">
             <h1>Barang List</h1>
           </div>
-          
+
           <div class="section-body">
             <div class="row">
                 <div class="col-12">
                   <div class="card">
                     <div class="card-header">
                       <h4>Stok Barang</h4>
-                      <div class="card-header-action"><a href="<?php echo site_url('barang_masuk/tambahBarang_masuk/'); ?>"><button class="btn btn-lg btn-info" type="submit"><i class="fas fa-plus"></i> Tambah Baru</button></a></div>
+                      <div class="card-header-action"><a href="<?php echo site_url('barang/tambahBarang/'); ?>"><button class="btn btn-lg btn-info" type="submit"><i class="fas fa-plus"></i> Tambah Baru</button></a></div>
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
                       <table class="table table-striped" id="table-1">
-                        <thead>                                 
+                        <thead>
                           <tr>
                             <th class="text-center">No</th>
                             <th>Nama Barang</th>
@@ -25,7 +25,7 @@
                           </tr>
                         </thead>
                         <tbody>
-                     <?php 
+                     <?php
                       if (!empty($barang)) {
                         $no = 1;
                         foreach ($barang as $data) {

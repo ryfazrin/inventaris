@@ -46,6 +46,9 @@
                 </div>
               </div>
             </div>
+            <div class="col-12">
+              <a href="<?php echo site_url('barang/tambahbarang/'); ?>"><button class="col-12 btn btn-lg btn-info mb-2" type="submit"><i class="fas fa-plus"></i> Barang Baru</button></a>
+            </div>
           </div>
         <?php elseif ($level->level == 'manajemen'): ?>
           <div class="row">
@@ -75,6 +78,9 @@
                 </div>
               </div>
             </div>
+            <div class="col-12">
+              <a href="<?php echo site_url('barang/tambahbarang/'); ?>"><button class="col-12 btn btn-lg btn-info mb-2" type="submit"><i class="fas fa-plus"></i> Barang Baru</button></a>
+            </div>
           </div>
         <?php elseif ($level->level == 'peminjam'): ?>
           <!-- <div class="row">
@@ -96,7 +102,7 @@
                   <div class="card-body">
                     <div class="table-responsive">
                       <table class="table table-striped" id="table-1">
-                        <thead>                                 
+                        <thead>
                           <tr>
                             <th class="text-center">No</th>
                             <th>Nama Barang</th>
@@ -107,7 +113,7 @@
                           </tr>
                         </thead>
                         <tbody>
-                     <?php 
+                     <?php
                       if (!empty($stoks)) {
                         $no = 1;
                         foreach ($stoks as $data) {

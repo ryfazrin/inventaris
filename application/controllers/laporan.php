@@ -9,7 +9,7 @@ class Laporan extends CI_Controller {
 			redirect('login');
 		}
 		// load barang model
-		$this->load->model('barang_model');
+		$this->load->model('welcome_model');
 		// load suplier model
 		$this->load->model('suplier_model');
 		// load barang_masuk model
@@ -36,7 +36,7 @@ class Laporan extends CI_Controller {
 
 	public function barang()
 	{
-		$data['barang'] = $this->barang_model->getData();
+		$data['barang'] = $this->welcome_model->getDataStok();
 		$this->load->view('laporan/template_laporan', $data);
 	}
 

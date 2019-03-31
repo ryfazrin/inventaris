@@ -7,7 +7,7 @@
           <div class="row">
             <div class="col-12">
               <div class="card">
-                
+
               	<div class="card">
               	<div class="card-header">
                 <?php
@@ -17,13 +17,13 @@
                       echo '<h4>Edit User</h4>';
                     }else{
                       // tambah user
-                      echo form_open('user/simpanUser');   
+                      echo form_open('user/simpanUser');
                       echo '<h4>Tambah User</h4>';
                     }
                  ?>
                 </div>
                   <div class="card-body">
-                      <?php 
+                      <?php
                         if (@$sukses) {
                           echo $sukses;
                         }elseif (@$error) {
@@ -56,7 +56,7 @@
                       <?php if (!isset($userId->password)): ?>
 	                    <div class="form-group">
 	                      <label>Password</label>
-	                      <input name="password" type="password" class="form-control">
+	                      <input name="password" type="text" class="form-control">
 	                    </div>
                       <?php endif ?>
 						        <div class="form-group text-right">
@@ -65,13 +65,13 @@
 		                </div>
                     </div>
 	                    </div>
-	                </div>	
+	                </div>
 				  </div>
               	</form>
 				</div>
 
               </div>
-            </div>          
+            </div>
           </div>
         </section>
       </div>
