@@ -40,7 +40,7 @@
                           <?php endif ?>
 	                        <option value="peminjam">peminjam</option>
 	                        <option value="manajemen">manajemen</option>
-	                        <option value="admin">admin</option>
+	                        <option value="administrator">administrator</option>
 	                      </select>
 	                    </div>
 	                    <div class="form-group">
@@ -53,12 +53,13 @@
 	                      <label>Username</label>
 	                      <input name="username" type="text" class="form-control" value="<?= isset($userId->username)?$userId->username:''; ?>">
 	                    </div>
-                      <?php if (!isset($userId->password)): ?>
 	                    <div class="form-group">
 	                      <label>Password</label>
 	                      <input name="password" type="text" class="form-control">
+                        <?php if (isset($userId->password)): ?>
+                          <small>Kosongkan saja Jika tidak Mengganti Password</small>
+                        <?php endif ?>
 	                    </div>
-                      <?php endif ?>
 						        <div class="form-group text-right">
 		                  <button class="btn btn-info mr-1" type="submit">Simpan</button>
                       <a href="<?php echo site_url('user'); ?>"> <button type="button" class="btn btn-danger" name="batal">Kembali</button></a>

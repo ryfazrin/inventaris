@@ -1,9 +1,9 @@
       <footer class="main-footer">
         <div class="footer-left">
-          Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://stisla.com/">stisla.com</a>
+          Copyright &copy; 2019 <div class="bullet"></div> By <a href="https://ryfazrin.github.io/">Ryfazrin</a> SMK Negeri 1 Kotabaru
         </div>
         <div class="footer-right">
-          
+
         </div>
       </footer>
     </div>
@@ -12,7 +12,7 @@
     <div id="modal-konfirmasi" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
-         
+
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           <h4 class="modal-title">Konfirmasi</h4>
@@ -24,7 +24,7 @@
           <a href="javascript:;" class="btn btn-danger" id="hapus-true-data">Hapus</a>
           <button type="button" class="btn btn-default" data-dismiss="modal">Tidak</button>
         </div>
-         
+
         </div>
       </div>
     </div>
@@ -47,7 +47,7 @@
 
   <!-- Page Specific JS File -->
   <script src="<?php echo base_url('assets/js/page/modules-datatables.js')?>"></script>
-  
+
   <!-- Template JS File -->
   <script src="<?php echo base_url('assets/js/scripts.js')?>"></script>
   <script src="<?php echo base_url('assets/js/custom.js')?>"></script>

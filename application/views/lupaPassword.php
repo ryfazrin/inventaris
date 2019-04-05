@@ -41,80 +41,25 @@
               }
              ?>
             <div class="card card-primary">
-              <div class="card-header"><h4>Login</h4></div>
+              <div class="card-header"><h4>bantuan</h4></div>
 
 
               <div class="card-body">
-                <?php echo form_open('login/cekLogin', 'class="needs-validation" novalidate=""') ?>
-                  <div class="form-group">
-                    <label for="username">Username</label>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                          <div class="input-group-text">@</div>
-                        </div>
-                      <input type="text" class="form-control" name="username" tabindex="1" required autofocus>
-                      <div class="invalid-feedback">
-                        Username tidak boleh Kosong!
-                      </div>
-                    </div>
+                  <div class="form-group text-center">
+                    <label class="text-center">Silahkan Hubungi Administrator</label>
                   </div>
-
-                  <div class="form-group">
-                    	<label for="password" class="control-label">Password</label>
-                    <input type="password" class="form-control" name="password" tabindex="2" required>
-                    <div class="invalid-feedback">
-                      Password tidak boleh Kosong!
-                    </div>
+                  <div class="form-group text-center">
+                    <a href="<?php echo base_url('login') ?>">Login</a>
                   </div>
-
-                  <div class="form-group">
-                    <div class="text-small text-center">
-                      <a href="<?php echo base_url('login/lupaPass') ?>">Lupa Password?</a>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
-                      Login
-                    </button>
-                  </div>
-                </form>
-
               </div>
             </div>
             <div class="mt-5 text-muted text-center">
               Belum Punya Akun? <a href="#">Contact Admin</a>
             </div>
             <div class="simple-footer">
-              Copyright &copy; By <a href="https://ryfazrin.github.io/">Ryfazrin</a> 2019
+              Copyright &copy; By <a href="https://github.com/ryfazrin">Ryfazrin</a> 2019
             </div>
           </div>
-
-          <!-- <div class="col-lg-3">
-            <h2>Login</h2>
-            <ul>
-              <li>
-                <b>Level: admin</b> <br>
-                Username: admin<br>
-                Pass: admin<br>
-              </li>
-              <li>
-                <b>Level: manajemen</b> <br>
-                Username: manajemen<br>
-                Pass: manajemen<br>
-              </li>
-              <li>
-                <b>Level: peminjam</b> <br>
-                Username: peminjam1<br>
-                Pass: peminjam1<br>
-              </li>
-              <li>
-                <b>Level: peminjam</b> <br>
-                Username: peminjam2<br>
-                Pass: peminjam2<br>
-              </li>
-            </ul>
-          </div> -->
 
         </div>
       </div>

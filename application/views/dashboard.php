@@ -5,7 +5,7 @@
             <h1>Dashboard</h1>
           </div>
 
-        <?php if ($level->level == 'admin'): ?>
+        <?php if ($level->level == 'administrator'): ?>
           <div class="row">
             <div class="col-lg-4 col-md-6 col-sm-6 col-12">
               <div class="card card-statistic-1">
@@ -83,13 +83,8 @@
             </div>
           </div>
         <?php elseif ($level->level == 'peminjam'): ?>
-          <!-- <div class="row">
-            <div class="card card-statistic-1"> -->
-                  <a href="<?php echo site_url('pinjam_barang/tambahPinjam_barang/'); ?>"><button class="col-12 btn btn-lg btn-info mb-2" type="submit"><i class="fas fa-plus"></i> Pinjam Barang Baru</button></a>
-              <!-- </div>
-            </div>
-          </div> -->
-        <?php endif ?>
+          <a href="<?php echo site_url('pinjam_barang/tambahPinjam_barang/'); ?>"><button class="col-12 btn btn-lg btn-info mb-2" type="submit"><i class="fas fa-plus"></i> Pinjam Barang Baru</button></a>
+        <?php endif; ?>
 
           <div class="section-body">
             <div class="row">
@@ -97,7 +92,6 @@
                   <div class="card">
                     <div class="card-header">
                       <h4>Stok Barang</h4>
-                      <!-- <div class="card-header-action"><a href="<?php echo site_url('barang_masuk/tambahBarang_masuk/'); ?>"><button class="btn btn-lg btn-info" type="submit"><i class="fas fa-plus"></i> Tambah Barang Masuk</button></a></div> -->
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
@@ -108,8 +102,8 @@
                             <th>Nama Barang</th>
                             <th>Jumlah Masuk</th>
                             <th>Jumlah Keluar</th>
-                            <th>Pinjam</th>
-                            <th>Sisa Stok</th>
+                            <th>Di Pinjam</th>
+                            <th>Stok Barang</th>
                           </tr>
                         </thead>
                         <tbody>

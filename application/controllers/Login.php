@@ -12,7 +12,7 @@ class Login extends CI_Controller {
 	{
 		if(!$this->session->userdata('username'))
 		{
-			$this->load->view('loginForm'); 
+			$this->load->view('loginForm');
 		}
 		else
 		{
@@ -46,5 +46,10 @@ class Login extends CI_Controller {
 		$data['keluar']  = '
 							<div class="alert alert-info alert-dismissible show fade">Anda telah keluar<button class="close" data-dismiss="alert"><span>&times;</span></button></div>';
 		$this->load->view('LoginForm', $data);
+	}
+
+	public function lupaPass()
+	{
+		$this->load->view('lupaPassword');
 	}
 }

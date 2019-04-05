@@ -1,7 +1,7 @@
-<?php 
+<?php
 	class User_model extends CI_model
 	{
-		
+
 		function __construct()
 		{
 			parent::__construct();
@@ -37,11 +37,21 @@
 
 		function update($id)
 		{
-			$data = array(
-				'nama' => $this->input->post('nama'),
-				'username' => $this->input->post('username'),
-				'level'=> $this->input->post('level') 
-			);
+			if ($this->input->post('password') == "") {
+				$data = array(
+					'nama' => $this->input->post('nama'),
+					'username' => $this->input->post('username'),
+					'level'=> $this->input->post('level')
+				);
+			}else {
+				$data = array(
+					'nama' => $this->input->post('nama'),
+					'username' => $this->input->post('username'),
+					"password"   => md5($this->input->post('password')),
+					'level'=> $this->input->post('level')
+
+				);
+			}
 
 			$this->db->where('id_user', $id);
 			$this->db->update('user', $data);
