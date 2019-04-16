@@ -110,9 +110,9 @@ class Pinjam_barang extends CI_Controller
 		$this->load->view('footer');
 	}
 
-	public function hapus($id)
-	{
-		$this->pinjam_barang_model->delete($id);
-		redirect(site_url('pinjam_barang'));
-	}
+	// public function hapus($id)
+	// {
+	// 	$this->pinjam_barang_model->delete($id);
+	// 	redirect(site_url('pinjam_barang'));
+	// }
 }

@@ -14,7 +14,7 @@ class Welcome extends CI_Controller {
 		// load login model
 		$this->load->model('login_model');
 	}
-	
+
 	public function index()
 	{
 		$uname = $this->session->userdata('username');
@@ -24,6 +24,7 @@ class Welcome extends CI_Controller {
 		$data['barangs'] = $this->welcome_model->barang_rows();
 		$data['supliers'] = $this->welcome_model->suplier_rows();
 
+		$data['jatuh_tempo'] = $this->welcome_model->jatuh_tempo_pinjam($uname);
 		$data['stoks'] = $this->welcome_model->getDataStok();
 		$this->load->view('head');
 		$this->load->view('header');

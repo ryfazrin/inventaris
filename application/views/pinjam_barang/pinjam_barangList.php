@@ -4,7 +4,7 @@
           <div class="section-header">
             <h1>Daftar Pinjam Barang</h1>
           </div>
-          
+
           <div class="section-body">
             <div class="row">
                 <div class="col-12">
@@ -16,7 +16,7 @@
                   <div class="card-body">
                     <div class="table-responsive">
                       <table class="table table-striped" id="table-1">
-                        <thead>                                 
+                        <thead>
                           <tr>
                             <th class="text-center">No</th>
                             <th>Peminjam</th>
@@ -31,7 +31,7 @@
                           </tr>
                         </thead>
                         <tbody>
-                     <?php 
+                     <?php
                       if (!empty($pinjam_barang)) {
                       	$no = 1;
                         foreach ($pinjam_barang as $data) {
@@ -54,7 +54,7 @@
                             <?php if ($level->level != 'peminjam'): ?>
                             <td>
                                <a href="<?php echo site_url('pinjam_barang/ubah/'.$data->id_pinjam);?>" class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt"></i></a>
-                               <a href="<?= site_url('pinjam_barang/hapus/'.$data->id_pinjam); ?>" class="btn btn-danger btn-action" onclick="return confirm('Yakin Hapus data peminjaman?')" data-toggle="tooltip" title="Delete"><i class="fas fa-trash"></i></a>
+                               <!-- <a href="<?= site_url('pinjam_barang/hapus/'.$data->id_pinjam); ?>" class="btn btn-danger btn-action" onclick="return confirm('Yakin Hapus data peminjaman?')" data-toggle="tooltip" title="Delete"><i class="fas fa-trash"></i></a> -->
                             </td>
                             <?php endif; ?>
                           </tr>

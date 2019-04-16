@@ -16,7 +16,7 @@
                       echo '<h4>Edit Pinjam Barang</h4>';
                     }else{
                       // tambah barang
-                      echo form_open('pinjam_barang/simpanPinjam_barang');   
+                      echo form_open('pinjam_barang/simpanPinjam_barang');
                       echo '<h4>Tambah Pinjam Barang</h4>';
                     }
                  ?>
@@ -24,7 +24,7 @@
                   <div class="card-body">
                     <div class="row">
                       <div class="col-lg-12">
-                      <?php 
+                      <?php
                         if (@$sukses) {
                           echo $sukses;
                         }elseif (@$error) {
@@ -33,7 +33,7 @@
                        ?>
                       </div>
                     <div class="col-lg-6">
-                      
+
                     <?php if ($level->level == 'peminjam'): ?>
                       <input name="peminjam" type="hidden" class="form-control" value="<?= $level->username ?>">
                     <?php else: ?>
@@ -55,21 +55,22 @@
 
                       <div class="form-group">
                         <label>Nama Barang</label>
-                        <select class="form-control select2 text-capitalize" name="id_barang">
+                        <select onchange="stok()" id="barang" class="form-control select2 text-capitalize" name="id_barang">
 
                           <?php if (isset($pinjam_barangId->id_barang)): ?>
                             <option value="<?= $pinjam_barangId->id_barang; ?>"><?= $pinjam_barangId->nama_barang; ?></option>
                             <option disabled>-</option>
                           <?php endif ?>
-                          
+
                           <?php foreach ($nama_barang as $data): ?>
-                            <option value="<?= isset($data->id_barang)?$data->id_barang:''; ?>"><?= isset($data->nama_barang)?$data->nama_barang:''; ?></option>
+                            <option value="<?= isset($data->id_barang)?$data->id_barang:''; ?>" max="10"><?= isset($data->nama_barang)?$data->nama_barang:''; ?></option>
                           <?php endforeach ?>
                         </select>
                       </div>
                       <div class="form-group">
                         <label>Jumlah Pinjam Barang</label>
-                        <input name="jml_barang" type="number" class="form-control" value="<?= isset($pinjam_barangId->jml_barang)?$pinjam_barangId->jml_barang:''; ?>">
+                        <input id="jumlah" name="jml_barang" type="number" class="form-control" value="<?= isset($pinjam_barangId->jml_barang)?$pinjam_barangId->jml_barang:''; ?>">
+                        <div id="ket"></div>
                       </div>
                     </div>
                     <div class="col-lg-6">
@@ -93,13 +94,13 @@
                     </div>
                   </div>
                 </div>
-                  </div>  
+                  </div>
           </div>
                 </form>
         </div>
 
               </div>
-            </div>          
+            </div>
           </div>
         </section>
       </div>

@@ -38,7 +38,6 @@
                             <td><div class="badge badge-light"><?= $data->jml_masuk; ?></div></td>
                             <td>
                                <a href="<?php echo site_url('barang/ubah/'.$data->id_barang);?>" class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt"></i></a>
-                               <a href="<?= site_url('barang/konfirmasi_hapus/'.$data->id_barang); ?>" class="btn btn-danger btn-action" onclick="return confirm('Yakin Hapus barang? ')" data-toggle="tooltip" title="Delete"><i class="fas fa-trash"></i></a>
                             </td>
                           </tr>
                         <?php

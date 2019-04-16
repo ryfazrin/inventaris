@@ -85,7 +85,15 @@
         <?php elseif ($level->level == 'peminjam'): ?>
           <a href="<?php echo site_url('pinjam_barang/tambahPinjam_barang/'); ?>"><button class="col-12 btn btn-lg btn-info mb-2" type="submit"><i class="fas fa-plus"></i> Pinjam Barang Baru</button></a>
         <?php endif; ?>
-
+        <?php
+          foreach ($jatuh_tempo as $data) {
+            // echo $data->nama_barang." ";
+            // echo $data->tgl_kembali." ";
+        ?>
+            <div class="alert alert-danger">Barang dengan nama <?= $data->nama_barang ?>, tanggal kembali <?= $data->tgl_kembali ?>,  sebanyak <?= $data->jml_barang ?> barang, harus segera dikembalikan</div>
+        <?php
+          }
+         ?>
           <div class="section-body">
             <div class="row">
                 <div class="col-12">

@@ -119,6 +119,7 @@ class Barang_masuk extends CI_Controller
 	public function hapus($id)
 	{
 		$this->barang_masuk_model->delete($id);
+
 		redirect(site_url('barang_masuk'));
 	}
 }

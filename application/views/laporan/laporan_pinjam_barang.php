@@ -2,7 +2,7 @@
               <div class="card-body">
                 <!-- table laporan -->
                   <div class="card-header">
-                    <h1 class="text-center">Laporan Barang Masuk</h1>
+                    <h1 class="text-center">Laporan Pinjam Barang</h1>
                   </div>
                   <div class="card-body">
                     <table class="table table-striped table-bordered">
@@ -18,7 +18,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <?php 
+                        <?php
                          $no = 1;
                          foreach ($pinjam_barang as $data): ?>
                           <tr>
